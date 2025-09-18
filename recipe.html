@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <img id="ball" src="logo.svg" alt="Bouncing Logo" />
+  <div class="container">
+    <script src="script.js"></script>
+  <div class="container" id="recipe-container">
+    <!-- Recipe content inserted by JS -->
+  </div>
+
+  <script>
+    const recipes = {
+      padthai: {
+        title: "Vegetarian Pad Thai",
+        basePeople: 35,
+        ingredients: [
+          { name: ' g Rice noodles', amount: 3000 },
+          { name: 'ml Soy sauce', amount: 525 },
+          { name: 'g Brown sugar', amount: 260 },
+          { name: 'ml Rice vinegar', amount: 210 },
+          { name: 'ml Lime juice', amount: 140 },
+          { name: 'ml Vegetable oil', amount: 420 },
+          { name: 'ml Pad Thai sauce (optional)', amount: 1500 },
+          { name: 'Eggs', amount: 33 },
+          { name: 'kg Carrots', amount: 2.5 },
+          { name: 'kg Red bell peppers', amount: 1.6 },
+          { name: 'kg Yellow bell peppers', amount: 1.6 },
+          { name: 'g Green onions', amount: 700 },
+          { name: 'g Garlic', amount: 135 },
+          { name: 'kg Bean sprouts', amount: 3 },
+          { name: 'g Tofu', amount: 230 },
+          { name: 'g Fresh cilantro', amount: 600 },
+          { name: 'g Crushed peanuts', amount: 600 },
+          { name: 'Zucchini (optional)', amount: 2.5 },
+          { name: 'Yellow onions (optional)', amount: 2.5 }
+        ],
+        instructions: `
+            <p><strong>Prepare the Noodles: </strong> Bring a large pot of water to a boil. Add <span style="color:#7a004b;">rice noodles</span> and cook just until soft but still slightly firm (check package instructions). Drain, rinse under cold water, and drain again well. Toss noodles with a little oil to prevent sticking. Set aside.</p>
+            <p><strong>Make the Sauce: </strong> In a large bowl, mix <span style="color:#7a004b;">soy sauce</span>, <span style="color:#7a004b;">brown sugar</span>, <span style="color:#7a004b;">rice vinegar</span>, and <span style="color:#7a004b;">lime juice</span> until sugar dissolves. (If using store-bought <span style="color:#7a004b;">Pad Thai sauce</span>, skip this step.)</p>
+            <p><strong>Cook the Veggies: </strong> Heat half the <span style="color:#7a004b;">oil</span> in a large wok or very large frying pan over medium-high heat. Add shredded <span style="color:#7a004b;">carrots</span>, sliced <span style="color:#7a004b;">red peppers</span>, and minced <span style="color:#7a004b;">garlic</span>. Stir-fry for 3-4 minutes until veggies are crisp-tender. Add most of the <span style="color:#7a004b;">green onions</span> (reserve some for garnish), cook 1-2 more minutes.</p>
+            <p><strong>Cook the Eggs (vegetarian portion): </strong> Push veggies to one side of the pan. Pour beaten <span style="color:#7a004b;">eggs</span> into empty side, scramble gently until mostly cooked but still soft. Mix eggs with veggies.</p>
+            <p><strong>Add Noodles and Sauce: </strong> Add drained <span style="color:#7a004b;">noodles</span> and the prepared <span style="color:#7a004b;">sauce</span> to the wok. Toss everything together well to combine and heat through evenly.</p>
+            <p><strong>Add Bean Sprouts and Toppings: </strong> Stir in <span style="color:#7a004b;">bean sprouts</span> and chopped <span style="color:#7a004b;">cilantro</span> (reserve some for garnish). Toss gently to combine, cook for another minute.</p>
+            <p><strong>For Vegan Portions: </strong> In a separate pan, pan-fry or bake the cubed <span style="color:#7a004b;">tofu</span> until golden on all sides. Add tofu on top when plating vegan portions or gently fold it in with noodles in a smaller batch.</p>
+            <p><strong>Serve: </strong> Plate the Pad Thai, sprinkle with chopped <span style="color:#7a004b;">peanuts</span>, reserved <span style="color:#7a004b;">green onions</span>, and <span style="color:#7a004b;">cilantro</span>. Add <span style="color:#7a004b;">lime</span> wedges on the side for squeezing.</p>
+`,
+          
+      },
+
+      friedrice: {
+        title: "Fried rice with veggies",
+        basePeople: 35,
+        ingredients: [
+          { name: 'Butter'},
+          { name: 'Eggs', amount: 20 },
+          { name: 'g Garlic', amount: 30 },
+          { name: 'g Ginger', amount: 18 },
+          { name: 'kg Carrots', amount: 1.22 },
+          { name: 'g Green onions', amount: 450 },
+          { name: 'g Frozen peas', amount: 450 },
+          { name: 'kg Brown rice', amount: 4 },
+          { name: 'tsp Soy sauce', amount: 10 },
+          { name: 'tsp Vegetable oil', amount: 5 },
+          { name: 'g Tofu' },
+          { name: 'vegan butter'},
+      
+        ],
+        instructions: `
+            <p><strong>Prepare the Noodles:</strong></p>
+            <p>1. In a saucepan bring water to a boil. Stir in <span style="color:#7a004b;">rice</span>. Reduce heat, cover and simmer for 20 minutes.</p>
+            <p>2. Melt the <span style="color:#7a004b;">butter</span> in a large pan and fry the beaten <span style="color:#7a004b;">egg</span> in it. Using a spatula, chop the egg into small pieces, remove from the pan and set aside.</p>
+            <p>3. Melt some more <span style="color:#7a004b;">butter</span> in the pan and sauté <span style="color:#7a004b;">garlic</span> and <span style="color:#7a004b;">ginger</span> for 30 seconds.</p>
+            <p>4. Add the <span style="color:#7a004b;">carrots</span> and fry for another 5 minutes.</p>
+            <p>5. Add <span style="color:#7a004b;">spring onions</span> and <span style="color:#7a004b;">peas</span> to the pan and fry for 2-3 minutes.</p>
+            <p>6. Add the <span style="color:#7a004b;">rice</span>, <span style="color:#7a004b;">egg</span>, <span style="color:#7a004b;">soy sauce</span> and <span style="color:#7a004b;">oil</span>, mix well and sauté for a few minutes and serve.</p>
+
+
+        `,
+        
+      },
+      falafelWithLentilSalad: {
+  title: "Falafel with lentil salad",
+  basePeople: 35,
+  ingredients: [
+    { name: 'kg Canned chickpeas', amount: 4.38 },
+    { name: 'kg Onions', amount: 3.06 },
+    { name: 'g Garlic', amount: 320 },
+    { name: 'tbsp Parsley', amount: 53 },
+    { name: 'tsp Cumin', amount: 18 },
+    { name: 'tsp Coriander', amount: 18 },
+    { name: 'tsp Turmeric', amount: 9 },
+    { name: 'Salt and pepper', amount: '' },
+    { name: 'kg Flour', amount: 1.2 },
+    { name: 'g Baking powder', amount: 84 },
+    { name: 'l Oil (for frying)', amount: 10 },
+    { name: 'kg Lentils', amount: 3.5 },
+    { name: 'l Broth', amount: 7 },
+    { name: 'kg Spring onions', amount: 0.79 },
+    { name: 'kg Cherry tomatoes', amount: 0.7 },
+    { name: 'tbsp Honey', amount: 18 },
+    { name: 'tbsp Balsamic vinegar', amount: 52.5 },
+    { name: 'Lemon juice', },
+    { name: 'tbsp Olive oil', amount: 53 },
+  ],
+  instructions: `
+    <p><strong>Preparation:</strong></p>
+    <p>1. Drain the <span style="color:#7a004b;">chickpeas</span> and rinse with cold water. Chop <span style="color:#7a004b;">onion</span> and <span style="color:#7a004b;">garlic</span>.</p>
+    <p>2. Puree <span style="color:#7a004b;">chickpeas</span> with <span style="color:#7a004b;">onion</span>, <span style="color:#7a004b;">garlic</span> and <span style="color:#7a004b;">parsley</span> until a kind of paste is formed. Add the <span style="color:#7a004b;">spices</span> and puree again until everything is well mixed.</p>
+    <p>3. Pour the paste into a bowl and add the <span style="color:#7a004b;">flour</span> by the spoonful and mix well with a fork. Finally mix in the <span style="color:#7a004b;">baking powder</span> until everything is smooth.</p>
+    <p>4. Form a tablespoon of dough into small balls with your fingertips.</p>
+    <p>5. Heat the <span style="color:#7a004b;">oil</span> in a saucepan to the highest heat. Briefly hold a falafel in it. If it bubbles really strongly, it is hot enough.</p>
+    <p>6. Put the balls in the hot <span style="color:#7a004b;">oil</span> and fry for about 2–4 minutes until they are brown and crispy. Store the finished balls on a piece of kitchen paper.</p>
+    <p>7. Cook the <span style="color:#7a004b;">lentils</span> in <span style="color:#7a004b;">broth</span> for about 30 minutes.</p>
+    <p>8. In the meantime, quarter the <span style="color:#7a004b;">cocktail tomatoes</span> and cut the <span style="color:#7a004b;">spring onions</span> into fine rings.</p>
+    <p>9. Mix a vinaigrette with the remaining ingredients: <span style="color:#7a004b;">honey</span>, <span style="color:#7a004b;">balsamic vinegar</span>, <span style="color:#7a004b;">lemon juice</span> and <span style="color:#7a004b;">olive oil</span>. Mix the drained, cooked, slightly cooled <span style="color:#7a004b;">lentils</span> with the <span style="color:#7a004b;">tomatoes</span> and <span style="color:#7a004b;">onions</span> with the sauce.</p>
+  `,
+  
+    },
+
+    chiliSinCarne: {
+  title: "Chili sin carne",
+  basePeople: 35,
+  ingredients: [
+    { name: 'kg Bell peppers (cut)', amount: 0.52 },
+    { name: 'kg Onions (cut)', amount: 0.7 },
+    { name: 'Bouillon cubes', amount: 9 },
+    { name: 'ml Red wine', amount: 700 },
+    { name: 'kg Peeled tomatoes (with juice)', amount: 3.5 },
+    { name: 'g Garlic (crushed)', amount: 80 },
+    { name: 'kg Tomato puree', amount: 0.61 },
+    { name: 'tsp Paprika powder', amount: 6.5 },
+    { name: 'tsp Chili powder', amount: 11 },
+    { name: 'tsp Cayenne pepper', amount: 4 },
+    { name: 'tsp Dried basil', amount: 10.9 },
+    { name: 'tsp Dried oregano', amount: 2 },
+    { name: 'tbsp Dried parsley', amount: 8.8 },
+    { name: 'tsp Black pepper', amount: 2 },
+    { name: 'tsp Salt', amount: 4.5 },
+    { name: 'dr Hot sauce / Tabasco', amount: 53 },
+    { name: 'kg Kidney beans', amount: 1.75 },
+    { name: 'kg Corn', amount: 1.31 },
+    { name: 'Vegetable oil' },
+  ],
+  instructions: `
+    <p><strong>Preparation:</strong></p>
+    <p>1. Heat the <span style="color:#7a004b;">oil</span> in a big pan on middle high heat. Fry the <span style="color:#7a004b;">bell pepper</span> and <span style="color:#7a004b;">onion</span> until soft.</p>
+    <p>2. Add the <span style="color:#7a004b;">bouillon cubes</span> and <span style="color:#7a004b;">wine</span>. Cook for a few minutes.</p>
+    <p>3. Add the <span style="color:#7a004b;">peeled tomatoes</span>, <span style="color:#7a004b;">garlic</span> and <span style="color:#7a004b;">tomato puree</span>. Bring to taste with <span style="color:#7a004b;">paprika powder</span>, <span style="color:#7a004b;">chili powder</span>, <span style="color:#7a004b;">cayenne pepper</span>, <span style="color:#7a004b;">basil</span>, <span style="color:#7a004b;">oregano</span> and <span style="color:#7a004b;">parsley</span>. Add <span style="color:#7a004b;">salt</span> and <span style="color:#7a004b;">pepper</span>.</p>
+    <p>4. Cook on high until mixture starts boiling. Lower the heat and put a lid on the pan. Let it simmer for 90 minutes. Stir every now and then.</p>
+    <p>5. Add the <span style="color:#7a004b;">kidney beans</span> and <span style="color:#7a004b;">tabasco</span>. Add the <span style="color:#7a004b;">tomato juice</span> (from the peeled tomatoes) if the sauce has thickened too much. Let simmer for another 30 minutes.</p>
+    <p>6. Add the <span style="color:#7a004b;">corn</span> when the 30 minutes are over.</p>
+  `,
+  
+    },
+
+    bakedVeggiesWithTzatziki: {
+  title: "Baked veggies with Tzatziki",
+  basePeople: 35,
+  ingredients: [
+    { name: 'kg Potatoes', amount: 8.75 },
+    { name: 'kg Bell pepper', amount: 7 },
+    { name: 'kg Cherry tomatoes', amount: 2.6 },
+    { name: 'kg Feta cheese', amount: 1.75 },
+    { name: 'kg Onions', amount: 2.8 },
+    { name: 'Olive oil', amount: 0 },
+    { name: 'Salt/Pepper/Paprika powder/Thyme/Oregano/Rosemary'},
+    { name: 'kg Greek yoghurt', amount: 4.38 },
+    { name: 'kg Cucumber', amount: 3.5 },
+    { name: 'g Garlic', amount: 210 },
+  ],
+  instructions: `
+    <p><strong>Preparation:</strong></p>
+    <p>1. Preheat the oven 200°C.</p>
+    <p>2. Wash the <span style="color:#7a004b;">potatoes</span>, remove the core of the <span style="color:#7a004b;">bell pepper</span>, clean the champignons, peel <span style="color:#7a004b;">onions</span>. Cut everything to bite sized pieces and put it in a bowl.</p>
+    <p>3. Add the <span style="color:#7a004b;">olive oil</span> as well as the <span style="color:#7a004b;">spices</span> and mix until everything is distributed. The veggie should be covered in oil but they should not be drowning. Ideally, everything is covered but there is no excess oil at the bottom of the bowl.</p>
+    <p>4. Quarter the <span style="color:#7a004b;">tomatoes</span> and cut the <span style="color:#7a004b;">feta</span>. Add the veggies and the <span style="color:#7a004b;">tomatoes</span> and <span style="color:#7a004b;">feta</span> on a baking tray.</p>
+    <p>5. Put it in the oven and bake for around 30 minutes. Stir eventually. Serve when the <span style="color:#7a004b;">potatoes</span> are ready.</p>
+    <p>In the meantime: Tzatziki!</p>
+    <p>6. Wash and grate the <span style="color:#7a004b;">cucumbers</span>. Press the <span style="color:#7a004b;">garlic</span> into the <span style="color:#7a004b;">yoghurt</span> and add the grated <span style="color:#7a004b;">cucumbers</span>. Take care to add not the juice from the <span style="color:#7a004b;">cucumber</span> that developed during grating. Mix and season with <span style="color:#7a004b;">salt</span> and <span style="color:#7a004b;">pepper</span>.</p>
+  `,
+  
+    },
+
+lihtneTatrapada: {
+  title: "Simple Buckwheat Casserole",
+  basePeople: 35,
+  ingredients: [
+    { name: 'Cooking oil' },
+    { name: 'kg Buckwheat', amount: 1.8 },
+    { name: 'Onions', amount: 5 },
+    { name: 'Garlic cloves', amount: 10 },
+    { name: 'Medium carrots', amount: 8 },
+    { name: 'Large bell peppers', amount: 6 },
+    { name: 'g Peas/beans', amount: 700 },
+    { name: 'Green onion' },
+    { name: 'Leek' },
+    { name: 'Turmeric' },
+    { name: 'Chicken fillets', amount: 26 },
+    { name: 'Broiler seasoning' },
+    { name: 'Salt' },
+    { name: 'l Canned pineapple cubes (drained)', amount: 1.75 },
+    { name: 'l Coconut milk', amount: 1.7 }
+  ],
+  instructions: `
+    <p><strong>Cook Buckwheat</strong></p>
+    <p>In salted water (check ratio: 1 part <span style="color:#7a004b;">buckwheat</span> to 2.5–4 parts water).<br>
+    Add <span style="color:#7a004b;">peas</span> 1 minute before done, drain and set aside.</p>
+
+    <p><strong>Sauté Veggies</strong></p>
+    <p>In large pans, fry chopped <span style="color:#7a004b;">onion</span> and <span style="color:#7a004b;">leek</span> until golden.<br>
+    Add <span style="color:#7a004b;">garlic</span>, <span style="color:#7a004b;">carrots</span>, <span style="color:#7a004b;">bell peppers</span>, <span style="color:#7a004b;">turmeric</span>.<br>
+    Fry until soft and fragrant.<br>
+    Add drained <span style="color:#7a004b;">pineapple cubes</span> at the end to warm through.</p>
+
+    <p><strong>Combine All</strong></p>
+    <p>Mix sautéed vegetables with cooked <span style="color:#7a004b;">buckwheat</span>-<span style="color:#7a004b;">pea</span> mixture.<br>
+    Taste and season with <span style="color:#7a004b;">salt</span>, pepper, and a bit more <span style="color:#7a004b;">turmeric</span> if desired.</p>
+
+    <p><strong>Split for Vegan</strong></p>
+    <p>Stir in <span style="color:#7a004b;">coconut milk</span> and grated cheese (off heat or low heat).<br>
+    Add chopped herbs and <span style="color:#7a004b;">green onion</span>.<br>
+    Optional: bake for 10–15 mins for more flavor.</p>
+
+    <p><strong>Serve</strong></p>
+    <p>With appropriate garlic sauces on the side.<br>
+    Vegan garlic sauce: 100g plant-based yogurt, 1 crushed <span style="color:#7a004b;">garlic</span> clove, lemon juice, <span style="color:#7a004b;">salt</span> to taste.</p>
+  `,
+  
+},
+
+veggiecurry: {
+  title: "Veggie Curry",
+  basePeople: 35,
+  ingredients: [
+    { name: 'kg Onion', amount: 2.6 },
+    { name: 'kg Canned tomatoes', amount: 2.5 },
+    { name: 'kg Courgettes / Zucchini', amount: 1.5 },
+    { name: 'kg Carrots', amount: 1.6 },
+    { name: 'kg Rice (uncooked)', amount: 2.7 },
+    { name: 'l Coconut milk', amount: 2 },
+    { name: 'g Curry paste', amount: 110 },
+    { name: 'Curry powder', amount: null },
+    { name: 'Garlic', amount: null },
+    { name: 'Ginger', amount: null },
+    { name: 'Salt and pepper', amount: null },
+    { name: 'Chili (optional)', amount: null },
+  ],
+  instructions: `
+    <p><strong>Prepare the Vegetables:</strong></p>
+    <p>1. Dice the <span style="color:#7a004b;">onions</span>, <span style="color:#7a004b;">canned tomatoes</span>, <span style="color:#7a004b;">zucchini</span>, and <span style="color:#7a004b;">carrots</span>.</p>
+
+    <p><strong>Cook the Curry:</strong></p>
+    <p>2. In a large pot, sauté the <span style="color:#7a004b;">onions</span> in oil until soft.</p>
+    <p>3. Add the <span style="color:#7a004b;">carrots</span> and cook for a bit more, then add the <span style="color:#7a004b;">zucchini</span>.</p>
+    <p>4. Add the <span style="color:#7a004b;">coconut milk</span> and <span style="color:#7a004b;">canned tomatoes</span>. If the mixture is too thick, add more <span style="color:#7a004b;">coconut milk</span> or water.</p>
+    <p>5. Add <span style="color:#7a004b;">curry paste</span>, <span style="color:#7a004b;">curry powder</span>, <span style="color:#7a004b;">garlic</span>, <span style="color:#7a004b;">ginger</span>, <span style="color:#7a004b;">salt</span>, <span style="color:#7a004b;">pepper</span> and optional <span style="color:#7a004b;">chili</span>. Let the curry simmer until the vegetables are tender and flavors have developed.</p>
+
+    <p><strong>Prepare the Rice:</strong></p>
+    <p>6. Cook the <span style="color:#7a004b;">rice</span> according to package instructions. This may take up to 45 minutes, including time to boil the water.</p>
+    <p>7. If the <span style="color:#7a004b;">rice</span> is done too early, cover it with a lid to keep it warm.</p>
+  `,
+  
+},
+
+
+potatoSalad: {
+  title: "Potato Salad",
+  basePeople: 35,
+  ingredients: [
+    { name: 'kg Potatoes (yellow, red, or white)', amount: 5.29 },
+    { name: 'tbsp Vinegar (apple cider, wine, or rice wine)', amount: 6 },
+    { name: 'kg Sour cream', amount: 0.7 },
+    { name: 'kg Mayonnaise', amount: 0.438 },
+    { name: 'tbsp Yellow mustard (or Dijon/whole grain)', amount: 6 },
+    { name: 'kg Red onion, finely chopped', amount: 0.438 },
+    { name: 'kg Celery stalks, finely chopped', amount: 0.729 },
+    { name: 'kg Dill pickle, finely chopped', amount: 0.278 },
+    { name: 'Hard-boiled eggs, chopped (optional)', amount: 12 },
+    { name: 'g Fresh herbs (parsley, dill, chives, tarragon, cilantro)', amount: 80 },
+    { name: 'Salt and black pepper'}
+  ],
+  instructions: `
+    <p><strong>Cook Potatoes:</strong></p>
+    <p>Add the <span style="color:#7a004b;">potatoes</span> to a large pot and cover with water. Season with <span style="color:#7a004b;">salt</span>.</p>
+    <p>Bring to a boil, reduce to simmer, and cook for 15–20 minutes until fork-tender.</p>
+    <p>Prepare an ice bath. Drain and cool the <span style="color:#7a004b;">potatoes</span> in it.</p>
+    <p>Peel and chop into bite-size pieces. Add to a bowl, scatter <span style="color:#7a004b;">vinegar</span> over, and lightly season with <span style="color:#7a004b;">salt</span>.</p>
+
+    <p><strong>De-flame Onions:</strong></p>
+    <p>Soak <span style="color:#7a004b;">red onions</span> in cold water for 10 minutes, then rinse to reduce sharpness.</p>
+
+    <p><strong>Make Potato Salad:</strong></p>
+    <p>Mix <span style="color:#7a004b;">sour cream</span>, <span style="color:#7a004b;">mayonnaise</span>, and <span style="color:#7a004b;">mustard</span>.</p>
+    <p>Stir into potatoes along with <span style="color:#7a004b;">onions</span>, <span style="color:#7a004b;">celery</span>, <span style="color:#7a004b;">pickles</span>, <span style="color:#7a004b;">eggs</span> (optional), and <span style="color:#7a004b;">herbs</span>.</p>
+    <p>Season with <span style="color:#7a004b;">salt</span> and <span style="color:#7a004b;">pepper</span>. Refrigerate for 30 minutes before serving if possible.</p>
+  `,
+  
+    },
+    ratatouille: {
+  title: "Ratatouille with Eggplant and Zucchini & Couscous",
+  basePeople: 35,
+  ingredients: [
+    { name: 'kg Eggplants', amount: 4 },
+    { name: 'Bell peppers (red/yellow)', amount: 14 },
+    { name: 'kg Zucchini', amount: 2.7 },
+    { name: 'g Carrots', amount: 700 },
+    { name: 'Onions (medium-large)', amount: 6 },
+    { name: 'Garlic cloves', amount: 20 },
+    { name: 'kg Chopped canned tomatoes', amount: 2.5 },
+    { name: 'Salt and black pepper', amount: null },
+    { name: 'ml Olive or vegetable oil', amount: 200 },
+    { name: 'kg Couscous', amount: 2 },
+    { name: 'g Mixed legumes (peas + beans)', amount: 800 },
+    { name: 'l Vegetable stock', amount: 3.5 },
+    { name: 'Chili paste (optional)', amount: null },
+    { name: 'Fresh or dried herbs (parsley, thyme, basil)', amount: null },
+    { name: 'Lemon wedges (optional)', amount: null },
+    { name: 'Vegan feta (optional)', amount: null },
+  ],
+  instructions: `
+    <p><strong>🔪 Step-by-Step Instructions</strong></p>
+
+    <p><strong>🔹 1. Prep Ingredients</strong><br/>
+    Dice <span style="color:#7a004b;">onions</span>, mince <span style="color:#7a004b;">garlic</span>.<br/>
+    Cube <span style="color:#7a004b;">eggplants</span>, <span style="color:#7a004b;">zucchini</span>, and <span style="color:#7a004b;">bell peppers</span>.<br/>
+    Rinse and drain <span style="color:#7a004b;">canned legumes</span>. Defrost frozen peas (or add directly near the end).</p>
+
+    <p><strong>🔹 2. Sauté Veggies</strong><br/>
+    In 2–3 large pots, heat <span style="color:#7a004b;">olive oil</span>.<br/>
+    Add <span style="color:#7a004b;">onions</span> and <span style="color:#7a004b;">garlic</span>, sauté 5 minutes.<br/>
+    Add <span style="color:#7a004b;">eggplants</span>, <span style="color:#7a004b;">zucchini</span>, and <span style="color:#7a004b;">bell peppers</span>. Sauté 10–15 minutes, stirring.</p>
+
+    <p><strong>🔹 3. Add Tomatoes & Legumes</strong><br/>
+    Add <span style="color:#7a004b;">canned tomatoes</span>, <span style="color:#7a004b;">beans</span>, <span style="color:#7a004b;">peas</span>, and optional <span style="color:#7a004b;">chili paste</span>.<br/>
+    Season with <span style="color:#7a004b;">salt and pepper</span>. Simmer 20–25 minutes uncovered, stirring regularly.<br/>
+    Stir in frozen peas in the last 5 minutes.</p>
+
+    <p><strong>🔹 4. Cook Couscous</strong><br/>
+    In large bowls/trays, pour boiling <span style="color:#7a004b;">vegetable stock</span> over <span style="color:#7a004b;">couscous</span> (ratio 1.2:1).<br/>
+    For 1.5 kg couscous, use ~1.8L stock.<br/>
+    Cover 8–10 minutes, fluff with fork.</p>
+
+    <p><strong>🔹 5. Combine or Serve Separately</strong><br/>
+    Option A: Mix <span style="color:#7a004b;">couscous</span> into ratatouille.<br/>
+    Option B (recommended): Plate <span style="color:#7a004b;">couscous</span> and ladle stew on top.</p>
+
+    <p><strong>🔹 6. Garnish & Serve</strong><br/>
+    Top with <span style="color:#7a004b;">herbs</span>, serve with <span style="color:#7a004b;">lemon wedges</span> or optional <span style="color:#7a004b;">vegan feta</span>.</p>
+
+    <p><em>🧮 Yield:</em><br/>
+    35 servings × 400–500g each (~150g couscous + ~250–300g ratatouille)</p>
+  `,
+  
+},
+
+fajitaPasta: {
+  title: "Fajita-Style Pasta",
+  basePeople: 35,
+  ingredients: [
+    { name: "kg Pasta (penne or fusilli)", amount: 2.5 },
+    { name: "Large onions (sliced)", amount: 7 },
+    { name: "Red bell peppers (sliced)", amount: 7 },
+    { name: "Yellow bell peppers (sliced)", amount: 7 },
+    { name: "Green bell peppers (sliced)", amount: 7 },
+    { name: "Garlic cloves (minced)", amount: 35 },
+    { name: "kg Mushrooms or firm tofu", amount: 1.6 },
+    { name: "tbsp Olive oil", amount: 8 },
+    { name: "tbsp Fajita seasoning mix", amount: 9 },
+    { name: "tbsp Chili powder (optional replacement)", amount: 2 },
+    { name: "tbsp Smoked paprika (optional replacement)", amount: 4 },
+    { name: "tbsp Ground cumin (optional replacement)", amount: 2 },
+    { name: "tbsp Ground coriander (optional replacement)", amount: 2 },
+    { name: "tbsp Dried oregano (optional replacement)", amount: 1 },
+    { name: "Salt and pepper", amount: null },
+    { name: "tsp Cayenne (optional)", amount: 1.5 },
+    { name: "cups Plant-based cream", amount: 7 },
+    { name: "cups Grated cheddar or vegan cheese (optional)", amount: 4 },
+    { name: "tbsp Tomato purée/paste", amount: 6 },
+    { name: "Pickled jalapeños (optional garnish)", amount: null },
+    { name: "Fresh chopped parsley or cilantro", amount: null },
+  ],
+  instructions: `
+    <p><strong>🥄 Instructions</strong></p>
+
+    <p>1. Boil <span style="color:#7a004b;">pasta</span> in well-salted water until al dente. Drain and set aside.</p>
+
+    <p>2. In batches, sauté <span style="color:#7a004b;">onions</span> and <span style="color:#7a004b;">bell peppers</span> in <span style="color:#7a004b;">olive oil</span> over medium-high heat until soft and slightly charred.</p>
+
+    <p>3. Add <span style="color:#7a004b;">garlic</span> and <span style="color:#7a004b;">seasoning mix</span>. Stir for 1–2 minutes.</p>
+
+    <p>4. Add <span style="color:#7a004b;">mushrooms or tofu</span>. Cook until mushrooms brown or tofu is golden.</p>
+
+    <p>5. Stir in <span style="color:#7a004b;">tomato purée</span> and <span style="color:#7a004b;">plant-based cream</span>. Simmer for 3–4 minutes until slightly thickened.</p>
+
+    <p>6. Add <span style="color:#7a004b;">cooked pasta</span>. Stir well to coat. Add pasta water to adjust consistency if needed.</p>
+
+    <p>7. Adjust salt, spice, and creaminess. Optionally stir in <span style="color:#7a004b;">cheese</span> or serve on top.</p>
+
+    <p>8. Garnish with <span style="color:#7a004b;">fresh herbs</span> and <span style="color:#7a004b;">pickled jalapeños</span>.</p>
+  `,
+  
+},
+
+herneRiisipada: {
+  title: "Pea-rice-ananass",
+  basePeople: 35,
+  ingredients: [
+    { name: "kg Cooked chickpeas (~1.2–1.5 kg dried or 4–5 × 530g cans)", amount: 3 },
+    { name: "ml Vegetable oil or vegan butter", amount: 150 },
+    { name: "g Leek (thinly sliced, ~7–8 leeks)", amount: 800 },
+    { name: "tsp Turmeric powder", amount: 2 },
+    { name: "tsp Vegetable seasoning or curry powder", amount: 2 },
+    { name: "liters Canned pineapple cubes (drained)", amount: 3 },
+    { name: "kg Long-grain rice or risotto rice", amount: 2.8 },
+    { name: "liters Hot water", amount: 3.5 },
+    { name: "tbsp Salt", amount: 1 },
+    { name: "liters 10% cream or vegan cooking cream", amount: 1.4 }
+  ],
+  instructions: `
+    <p><strong>🔪 Preparation Instructions</strong></p>
+
+    <p>1. Prepare <span style="color:#7a004b;">chickpeas</span>: If using dried, soak overnight and cook until tender. If using canned, drain and rinse.</p>
+
+    <p>2. In a large pot, heat <span style="color:#7a004b;">vegetable oil or vegan butter</span>.</p>
+
+    <p>3. Add <span style="color:#7a004b;">sliced leek</span> and sauté until soft and translucent.</p>
+
+    <p>4. Add <span style="color:#7a004b;">turmeric powder</span> and <span style="color:#7a004b;">vegetable seasoning</span>. Cook for 1–2 minutes to release flavor.</p>
+
+    <p>5. Stir in the <span style="color:#7a004b;">pineapple cubes</span> and sauté briefly.</p>
+
+    <p>6. Add the <span style="color:#7a004b;">rice</span>, stir to coat with all spices and oil.</p>
+
+    <p>7. Pour in the <span style="color:#7a004b;">hot water</span> and season with <span style="color:#7a004b;">salt</span>. Bring to a boil.</p>
+
+    <p>8. Reduce heat, cover and simmer until rice is tender and liquid absorbed (~20–25 minutes).</p>
+
+    <p>9. Stir in the <span style="color:#7a004b;">cooked chickpeas</span> and <span style="color:#7a004b;">vegan cream</span>. Heat gently, adjust seasoning.</p>
+
+    <p>10. Serve hot. Optional: Garnish with fresh herbs or chopped spring onions.</p>
+  `,
+  
+}
+
+
+
+
+    };
+
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        name: params.get('name'),
+        people: parseInt(params.get('people')) || 1
+      };
+    }
+
+    function renderRecipe() {
+      const { name, people } = getQueryParams();
+      const recipe = recipes[name];
+      if (!recipe) {
+        document.getElementById('recipe-container').innerHTML = "<p>Recipe not found.</p>";
+        return;
+      }
+
+    const adjustedIngredients = recipe.ingredients
+  .map(item => {
+    // Trim leading/trailing spaces once
+    const nameTrimmed = item.name.trim();
+
+    // If there's no valid numeric amount, just show the name
+    if (typeof item.amount !== 'number' || isNaN(item.amount)) {
+      return `<li>${nameTrimmed}</li>`;
+    }
+  const nameLower = item.name.toLowerCase();
+  const adjustedAmount = item.amount * people / recipe.basePeople;
+  let adjusted;
+
+  if (/kg\b/.test(nameLower)) {
+    // Keep kg with 2 decimal places
+    adjusted = (Math.round(adjustedAmount * 20) / 20).toFixed(2);
+  } else if (/g\b|ml\b/.test(nameLower)) {
+    // Grams/ml → round up to integer
+    adjusted = Math.ceil(adjustedAmount);
+  } else {
+    // Fallback: just 2 decimals
+    // Keep kg with 2 decimal places
+    // Fallback (e.g. things with parentheses like "onion (sliced)")
+      if (adjustedAmount < 1) {
+      adjusted = (Math.round(adjustedAmount * 20) / 20).toFixed(2);
+    } else {
+      const rounded = Math.round(adjustedAmount * 2) / 2;
+      adjusted = Number.isInteger(rounded) ? rounded : rounded.toFixed(1);
+    }
+  }
+
+  return `<li>${adjusted} ${item.name}</li>`;
+}).join("");
+
+
+      document.getElementById('recipe-container').innerHTML = `
+        <h1>${recipe.title}</h1>
+       
+        <p><strong>Ingredients (for ${people} people):</strong></p>
+        <ul>${adjustedIngredients}</ul>
+        <h2>Instructions</h2>
+        ${recipe.instructions}
+        <p><a href="index.html">← Back to recipes</a></p>
+      `;
+    }
+
+    renderRecipe();
+  </script>
+</body>
+</html>

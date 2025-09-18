@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Recipe Selector</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">    <img id="ball" src="logo.svg" alt="Bouncing Logo" />
+  <div class="container">
+    <script src="script.js"></script>
+
+    <h1>Recipes</h1>
+    <label for="people">People:</label>
+    <input type="number" id="people" value="4" min="1" />
+
+    <ul class="recipe-list">
+      <li><a href="#" onclick="goToRecipe('padthai')">Vegetarian Pad Thai</a></li>
+      <li><a href="#" onclick="goToRecipe('friedrice')">Fried rice with veggies</a></li>
+      <li><a href="#" onclick="goToRecipe('falafelWithLentilSalad')">Falafel with lentil salad</a></li>
+      <li><a href="#" onclick="goToRecipe('chiliSinCarne')">Chili sin carne</a></li>
+      <li><a href="#" onclick="goToRecipe('bakedVeggiesWithTzatziki')">Baked veggies with Tzatziki</a></li>
+      <li><a href="#" onclick="goToRecipe('lihtneTatrapada')">Simple Buckwheat Casserole</a></li>
+      <li><a href="#" onclick="goToRecipe('veggiecurry')">Veggie curry</a></li>
+      <li><a href="#" onclick="goToRecipe('ratatouille')">Ratatouille with Eggplant and Zucchini & Couscous</a></li>
+      <li><a href="#" onclick="goToRecipe('fajitaPasta')">Fajita-Style Pasta</a></li>
+      <li><a href="#" onclick="goToRecipe('herneRiisipada')">Pea-rice-ananass</a></li>
+      <li><a href="#" onclick="goToRecipe('potatoSalad')">Potato salad</a></li>
+      <!-- Add more recipes here -->
+    </ul>
+  </div>
+
+  <script>
+    function goToRecipe(recipeName) {
+      const people = document.getElementById('people').value || 1;
+      window.location.href = `recipe.html?name=${recipeName}&people=${people}`;
+    }
+  </script>
+</body>
+</html>
