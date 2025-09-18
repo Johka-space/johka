@@ -94,9 +94,10 @@ img {
   /* On smaller screens (phones) */
 @media (max-width: 768px) {
   #ball {
-    width: 50px; /* smaller size */
-    height: 50px;
+    width: 100px; /* smaller size */
+    height: 100px;
   }/* On smaller screens (phones) */
 
 }
+
 
