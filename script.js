@@ -2,29 +2,43 @@ const ball = document.getElementById('ball');
 
 let posX = Math.random() * window.innerWidth;
 let posY = Math.random() * window.innerHeight;
-let speed = 1.5 + Math.random(); // Random speed
+let speed = 1.5 + Math.random();
 let angle = Math.random() * 2 * Math.PI;
 
 let velocityX = Math.cos(angle) * speed;
 let velocityY = Math.sin(angle) * speed;
 
+// Check if device is "phone-sized"
+const isMobile = window.innerWidth < 768; // tweak breakpoint if needed
+
 function moveBall() {
   const ballWidth = ball.offsetWidth;
   const ballHeight = ball.offsetHeight;
 
-  posX += velocityX;
-  posY += velocityY;
+  // Update positions
+  if (isMobile) {
+    // On phone: only move up and down
+    posY += velocityY;
 
-  if (posX <= 0 || posX + ballWidth >= window.innerWidth) {
-    velocityX *= -1;
-    tweakAngle();
+    if (posY <= 0 || posY + ballHeight >= window.innerHeight) {
+      velocityY *= -1;
+    }
+  } else {
+    // On desktop: full bouncing
+    posX += velocityX;
+    posY += velocityY;
+
+    if (posX <= 0 || posX + ballWidth >= window.innerWidth) {
+      velocityX *= -1;
+      tweakAngle();
+    }
+    if (posY <= 0 || posY + ballHeight >= window.innerHeight) {
+      velocityY *= -1;
+      tweakAngle();
+    }
   }
 
-  if (posY <= 0 || posY + ballHeight >= window.innerHeight) {
-    velocityY *= -1;
-    tweakAngle();
-  }
-
+  // Apply styles
   ball.style.left = `${posX}px`;
   ball.style.top = `${posY}px`;
 
@@ -41,3 +55,4 @@ function tweakAngle() {
 }
 
 moveBall();
+
